@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Nitesh%20Kumar/Desktop/Scaler/MLOps/MLflow/mlruns/276634579407132429/ff73de6fb18e455796f305ce210a741d/artifacts
+end_time: 1740775870451
+entry_point_name: ''
+experiment_id: '276634579407132429'
+lifecycle_stage: active
+run_id: ff73de6fb18e455796f305ce210a741d
+run_name: new_data
+run_uuid: ff73de6fb18e455796f305ce210a741d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740775864177
+status: 3
+tags: []
+user_id: krshanit
