@@ -11,4 +11,3 @@ seaborn
 matplotlib
 pytest
 requests
-sqlite3
