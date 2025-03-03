@@ -26,7 +26,7 @@ jobs:
           pip install pytest
 
       - name: Run unit tests
-        run: pytest square.py
+        run: pytest CI/square.py
 
       - name: Run integration tests
-        run: pytest test_database_operations.py
+        run: pytest CI/test_database_operations.py
