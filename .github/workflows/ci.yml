@@ -27,6 +27,8 @@ jobs:
 
       - name: Run unit tests
         run: pytest CI/test_square.py
+        run: pytest CI/test_hello.py
 
       - name: Run integration tests
-        run: pytest CI/test_database_operations.py
+        run: pytest CI/test_database_operations.py -v
+        run: pytest CI/test_int_test_dbconn.py -v
