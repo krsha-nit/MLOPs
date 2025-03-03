@@ -1,10 +1,6 @@
-Here’s a restructured and improved version of your `README.md` file. It is now more organized, easier to read, and includes clear sections for setup, running the applications, and accessing documentation.
-
----
-
 # MLOPs Project
 
-This project demonstrates the implementation of MLOPs using **Streamlit**, **Flask**, and **FastAPI**. Below are the instructions to set up and run the project.
+This project demonstrates the implementation of MLOPs using **Streamlit**, **Flask**, and **FastAPI**. Below are the instructions to set up and run the project locally or using Docker.
 
 ---
 
@@ -14,22 +10,19 @@ This project demonstrates the implementation of MLOPs using **Streamlit**, **Fla
    - [Streamlit](#streamlit)
    - [Flask](#flask)
    - [FastAPI](#fastapi)
-3. [API Documentation](#api-documentation)
-   - [Swagger UI](#swagger-ui)
-   - [ReDoc](#redoc)
+3. [Docker Setup](#docker-setup)
+4. [API Documentation](#api-documentation)
 
 ---
 
 ## **Setup**
 
 ### **1. Create a Virtual Environment**
-To isolate dependencies, create a virtual environment:
+Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
 ```
-
-Activate the virtual environment:
 
 - **Windows**:
   ```bash
@@ -41,7 +34,7 @@ Activate the virtual environment:
   ```
 
 ### **2. Install Dependencies**
-Install the required dependencies using `pip`:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -52,56 +45,76 @@ pip install -r requirements.txt
 ## **Running the Applications**
 
 ### **Streamlit**
-To run the Streamlit application, use the following command:
+Run the Streamlit app:
 
 ```bash
 streamlit run {streamlit_file.py}
 ```
 
-Replace `{streamlit_file.py}` with the actual filename of your Streamlit script.
+Replace `{streamlit_file.py}` with your Streamlit script filename.
 
 ---
 
 ### **Flask**
-To run the Flask application, use the following command:
+Run the Flask app:
 
 ```bash
 flask --app flask_fastapi/main run --host=127.0.0.1 --port=5000 --debug
 ```
 
-- The application will be available at `http://127.0.0.1:5000`.
-- Debug mode is enabled for easier development.
+- Access at: `http://127.0.0.1:5000`
+- Debug mode is enabled.
 
 ---
 
 ### **FastAPI**
-To run the FastAPI application, use the following command:
+Run the FastAPI app:
 
 ```bash
-uvicorn flask_fastapi.main_fastapi:app --host 127.0.0.1 --port 8000 --reload
+uvicorn flask_fastapi.main_fastapi:app --host 127.0.0.1 --port=8000 --reload
 ```
 
-- The application will be available at `http://127.0.0.1:8000`.
-- The `--reload` flag enables auto-reloading during development.
+- Access at: `http://127.0.0.1:8000`
+- Auto-reload is enabled for development.
+
+---
+
+## **Docker Setup**
+
+### **1. Build the Docker Image**
+Navigate to the project root folder (`MLOps`) and build the Docker image:
+
+```bash
+docker build -t flask-fastapi-api -f docker_containerization/Dockerfile .
+```
+
+### **2. Run the Docker Container**
+Run the container with ports mapped for Flask (`5000`) and FastAPI (`8000`):
+
+```bash
+docker run -p 5000:5000 -p 8000:8000 flask-fastapi-api
+```
+
+- **Flask**: Access at `http://127.0.0.1:5000`
+- **FastAPI**: Access at `http://127.0.0.1:8000`
 
 ---
 
 ## **API Documentation**
 
 ### **Swagger UI**
-FastAPI automatically generates interactive API documentation using Swagger UI. Access it at:
+FastAPI automatically generates interactive API documentation. Access it at:
 
 ```
 http://127.0.0.1:8000/docs
 ```
 
-- You can view all the defined routes.
-- Send requests and see responses directly from the browser.
+- View all routes and test endpoints directly.
 
 ---
 
 ### **ReDoc**
-FastAPI also provides ReDoc documentation, which is an alternative to Swagger UI. Access it at:
+FastAPI also provides ReDoc documentation. Access it at:
 
 ```
 http://127.0.0.1:8000/redoc
@@ -121,6 +134,6 @@ http://127.0.0.1:8000/redoc
 ---
 
 ## **Notes**
-- Ensure the virtual environment is activated before running any commands.
-- Replace `{streamlit_file.py}` with the actual filename of your Streamlit script.
-- Use `--debug` for Flask and `--reload` for FastAPI during development to enable auto-reloading.
+- Replace `{streamlit_file.py}` with your Streamlit script filename.
+- Use `--debug` for Flask and `--reload` for FastAPI during development.
+- Ensure Docker Desktop is running when using Docker.
