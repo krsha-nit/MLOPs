@@ -1,0 +1,13 @@
+pandas
+numpy
+streamlit
+yfinance
+openpyxl
+scikit-learn
+flask
+fastapi
+uvicorn
+seaborn
+matplotlib
+pytest
+requests
