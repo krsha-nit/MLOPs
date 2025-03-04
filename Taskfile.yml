@@ -10,16 +10,16 @@ tasks:
   unit-tests:
     desc: Run unit tests
     cmds:
-      - pytest test/test_square.py
-      - pytest test/test_hello.py
+      - pytest tests/test_square.py
+      - pytest tests/test_hello.py
 
   integration-tests:
     desc: Run integration tests
     cmds:
-      - pytest test/test_database_operations.py -v
-      - pytest test/test_int_test_dbconn.py -v
-      - pytest test/test_main.py -v
-      - pytest test/test_main_fastapi.py -v
+      - pytest tests/test_database_operations.py -v
+      - pytest tests/test_int_test_dbconn.py -v
+      - pytest tests/test_main.py -v
+      - pytest tests/test_main_fastapi.py -v
 
   test:
     desc: Run all tests (unit + integration)
